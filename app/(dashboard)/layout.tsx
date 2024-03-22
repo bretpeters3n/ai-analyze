@@ -10,10 +10,18 @@ const links = [
 const DashboardLayout = ({ children }) => {
   return (
     <div className="h-screen w-screen relative">
-      <aside className="absolute w-[200px] top-0 left-0 h-full border-r border-black/10">
-        <div className="px-4 my-4">
-          <span className="text-3xl">MOOD</span>
+      <header className="h-[60px] border-b border-black/10">
+        <div className="h-full w-full px-4 flex items-center justify-between">
+          <span className="text-3xl">
+            AI.Analyze<span className="text-yellow-400">.me</span>
+          </span>
+          <UserButton />
         </div>
+      </header>
+      <aside className="absolute w-[150px] top-[60px] left-0 h-full border-r border-black/10">
+        {/* <div className="px-4 my-4">
+          <span className="text-3xl">MOOD</span>
+        </div> */}
         <div>
           <ul className="px-4">
             {links.map((link) => (
@@ -24,13 +32,14 @@ const DashboardLayout = ({ children }) => {
           </ul>
         </div>
       </aside>
-      <div className="ml-[200px] h-full">
-        <header className="h-[60px] border-b border-black/10">
-          <div className="h-full w-full px-6 flex items-center justify-end">
+      <div className="ml-[150px] h-full">
+        {/* <header className="h-[60px] border-b border-black/10">
+          <div className="h-full w-full px-6 flex items-center justify-between">
+            <span className="text-3xl">MOOD</span>
             <UserButton />
           </div>
-        </header>
-        <div className="h-[calc(100vh-60px)]">{children}</div>
+        </header> */}
+        <div className="h-full">{children}</div>
       </div>
     </div>
   )
